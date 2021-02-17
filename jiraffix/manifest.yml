@@ -1,0 +1,18 @@
+permissions:
+  scopes:
+    - "read:jira-user"
+    - "read:jira-work"
+    - "write:jira-work"
+modules:
+  trigger:
+    - key: jiraffix-delete-regex-table
+      function: delRegexTable
+      events:
+        - avi:jira:created:issue
+        - avi:jira:updated:issue
+  function:
+    - key: delRegexTable
+      handler: deleteRegexTable.run
+app:
+  id: ari:cloud:ecosystem::app/41943824-a355-47a1-8003-7f0a804161b1
+  name: jiraffix
