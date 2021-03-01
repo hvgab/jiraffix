@@ -21,7 +21,8 @@ See [developer.atlassian.com/platform/forge/](https://developer.atlassian.com/pl
 - `git pull https://github.com/hvgab/jiraffix`
 - `cd jiraffix`
 - Install requirements
-- `nvm install --lts=emberium`
+- `nvm install --lts=erbium`
+- `nvm use --lts=erbium`
 - `npm install forge`
 - Run Forge commands to install it to your Jira instance.
 - `forge login`

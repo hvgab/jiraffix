@@ -49,45 +49,27 @@ export async function run(event, context) {
   await updateIssueDescription(event.issue.id, description);
 }
 
-async function getIssue(issueId) {
-  const requestUrl = `/rest/api/3/issue/${issueId}`;
-  let response = await api.asApp().requestJira(requestUrl, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
+async function trimTable(table) {
+  /**
+   * Don't remove table, fix table.
+   *
+   *
+   * @table = table from Jira Document
+   *  */
 
-  if (!response.ok === true) {
-    console.error(
-      `Could not get issue ${issue}: ${response.status} - ${response.statusText}`
-    );
-    throw `Unable to get issue. issueId: ${issueId}. Status: ${response.status}.`;
+  for (let tableRowIndex = 0; tableRowIndex < table.length; tableRowIndex++) {
+    const tableRow = table[tableRowIndex];
+
+    for (
+      let tableCellIndex = 0;
+      tableCellIndex < tableRow.length;
+      tableCellIndex++
+    ) {
+      const tableCell = tableRow[tableCellIndex];
+      // If something something table cell
+      // Do something clever.
+    }
   }
-  return response;
-}
-
-async function updateIssueDescription(issueId, description) {
-  console.log("Update issue description");
-  console.log(JSON.stringify(description, null, 2));
-
-  const url = `/rest/api/3/issue/${issueId}`;
-  const notifyUsers = false;
-  const data = { fields: { description: description } };
-  console.log(JSON.stringify(data, null, 2));
-
-  const response = await api.asApp().requestJira(url, {
-    method: "PUT",
-    headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(data),
-    notifyUsers: notifyUsers,
-  });
-
-  console.log(`Response: ${response.status} ${response.statusText}`);
-  console.log(await response.json());
 }
 
 async function recursiveTableFix(doc) {
