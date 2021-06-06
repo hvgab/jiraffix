@@ -67,7 +67,7 @@
                   "content": [
                     {
                       "type": "text",
-                      "text": "Henrik Gabrielsen IT Systems Manager Oslo : Maskineriet AS "
+                      "text": "Name IT Systems Manager Oslo : Maskineriet AS "
                     }
                   ]
                 }
@@ -396,7 +396,7 @@
                   "content": [
                     {
                       "type": "text",
-                      "text": "+47 46415252",
+                      "text": "+47 ",
                       "marks": [
                         {
                           "type": "textColor",
@@ -467,12 +467,12 @@
                   "content": [
                     {
                       "type": "text",
-                      "text": "henrik.gabrielsen@maskineriet.no",
+                      "text": "name@maskineriet.no",
                       "marks": [
                         {
                           "type": "link",
                           "attrs": {
-                            "href": "mailto:henrik.gabrielsen@maskineriet.no"
+                            "href": "mailto:name@maskineriet.no"
                           }
                         },
                         {
